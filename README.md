@@ -23,7 +23,7 @@ Prediction model for tabular data
 
 6. Run the following code in your terminal:
 
-```python3 YOURPATH/o1Neuro/o1Neuro/example.py```
+```python3  /YOURPATH/o1Neuro/scripts/Example.py```
 
 For more information about conda environment: <https://conda.io/projects/conda/en/latest/user-guide/getting-started.html#>
 
