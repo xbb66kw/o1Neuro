@@ -45,30 +45,6 @@ The following are my environments:
 * scipy: Scientific computing library for numerical operations (version 1.11.1).
 * hyperopt: Library for hyperparameter optimization (version 0.2.7).
 
-## Usage
-
-The following file demonstrate the basic usage of o1Neuro.
-
->main_py/example.py
-
-The following file is for the embryo dataset anaylsis in the paper.
-
->main_py/embryogrowth.py
-
-The following files are for the openML dataset anaylsis in the paper.
-
->main_py/open_ml.py
->
->main_py/openml_score_print.py
->
->main_py/open_ml_download_datasets.py
-
-The following files are for the simulation experiments in Section 5 of the paper.
-
->main_py/example_bias.py
->
->main_py/example_plot.py
-
 
 
 
