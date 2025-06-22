@@ -44,24 +44,13 @@ class o1Neuro:
         self.W_star = [np.zeros((p[l], p[l+1])) for l in range(num_layers)]
         self.C_star = [np.zeros(p[l+1]) for l in range(num_layers)]
         
-        # n = self.X0.shape[0]        
+        
         self.K = K or self.K
-        # if not bootstrap:
-        #     self.X = self.X0
-        #     self.y = self.y0
         
         # Transfer learning or not
         self.W_star = W_star if W_star is not None else self.W_star
         self.C_star = C_star if C_star is not None else self.C_star
         for _ in range(b):
-            # if bootstrap:                         
-            #     ind_set = np.random.choice(
-            #         a = n, 
-            #         # size = int(n * self.stochastic_ratio),
-            #         size = n,
-            #         replace = False)
-            #     self.X = self.X0[ind_set, :]
-            #     self.y = self.y0[ind_set]
             self.sequential_training()
 
     def sequential_training(self):
@@ -88,7 +77,6 @@ class o1Neuro:
         # X_train, y_train, = self.X, self.y
         W_star = [w.copy() for w in self.W_star]
         C_star = [c.copy() for c in self.C_star]
-        # n = X_train.shape[0]
         n = int(self.X0.shape[0] * self.stochastic_ratio)
         p = [self.X0.shape[1]] + self.p
         K, sparsity_level = self.K, self.sparsity_level
@@ -96,6 +84,7 @@ class o1Neuro:
         ###
         ###
         # TESTED FEATURE
+        # CURRENTLY DISABLED. YOU MAY COMMENT THEM OUT
         # Sample the updated neurons in this round
         update_list = []
         for l in range(len(W_star)):
@@ -116,7 +105,7 @@ class o1Neuro:
                 
                 ####
                 ####
-                # TESTED FEATURE
+                # Stochastic EEO
                 ind_set = np.random.choice(
                     a = self.X0.shape[0], 
                     size = n,
@@ -140,11 +129,7 @@ class o1Neuro:
                 C[l] = C[l].copy()
     
                 # Check if connected to output
-                # The last layer is always connected to output     
-                # connected_ = not (l < len(W_star) - 1 \
-                #                   and np.sum(W_star[l+1][r, :]**2) == 0)
-
-                ## TEST
+                # The last layer is always connected to output                    
                 connected_ = True
                 connected_ = l < len(W_star) - 1
                 connected_set = []
@@ -221,12 +206,6 @@ class o1Neuro:
                     # at 13~15 decimal places
                     gain_vector[K-1] += np.var(y_train) * self.stabilizer
                     max_ind = np.argmax(gain_vector)
-                    
-                    
-                    if l == 0 and r == 0:
-                        pass
-                        # Gain is nondecreasing given the same training sample: 
-                        # print(f'max gain: {gain_vector[max_ind]}, gain K-1: {gain_vector[K-1]}')
                 else:
                     max_ind = np.random.choice(K)
 
