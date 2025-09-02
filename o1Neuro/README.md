@@ -1,5 +1,7 @@
 Install this Python package by running: 
+
 bash cd ./o1Neuro
+
 bash pip install -e .
 
 restart the python editor if needed.
