@@ -17,9 +17,11 @@ Prediction model for tabular data
 
 ```conda activate myenvironment```
 
-5. Install the dependencies of Collaborative Trees Ensemble under your conda environment using the following command:
+5. Install the dependencies of o1Neuro under your conda environment using the following commands:
 
-```conda install xgboost==1.5.0 numpy conda-forge::scikit-learn conda-forge::hyperopt scipy```
+```conda install -c pytorch -c nvidia -c conda-forge pytorch torchvision torchaudio pytorch-cuda=11.8 xgboost==1.5.0 numpy scikit-learn hyperopt scipy numba```
+
+```pip install pytorch-tabnet```
 
 6. Run the following code in your terminal:
 
@@ -29,28 +31,12 @@ For more information about conda environment: <https://conda.io/projects/conda/e
 
 Alternatively, you can use IDEs like Spyder in conda, which provide friendly tools for visual learners.
 
-## Dependencies
-
-The following are my environments:
-
-* Spyder version: 5.5.1 (conda)
-* Python version: 3.10.12 64-bit
-  
-  _Early versions of Python do not support type hints. The package `hyperopt` may not be compatible with the latest Python version. :c_
-  
-* Conda version: 24.3.0
-
-* xgboost: Used for boosting algorithms (version 1.5.0).
-* sklearn: Provides machine learning algorithms and utilities (version 1.2.2).
-* scipy: Scientific computing library for numerical operations (version 1.11.1).
-* hyperopt: Library for hyperparameter optimization (version 0.2.7).
-
 
 
 
 ## Reference
 
-Chien-Ming Chi (2025) Sure Convergence and Constructive Universal Approximation for Multi-Layer Neural Networks.
+Chien-Ming Chi (2025) Constructive Universal Approximation and Sure Convergence for Multi-Layer Neural Networks.
 
 ## License
 
