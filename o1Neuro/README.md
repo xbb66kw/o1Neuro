@@ -19,6 +19,3 @@ Execute the provided example script:
 ```bash
 python3 YOURPATH/o1Neuro/scripts/Example.py
 ```
-
-```
-```
