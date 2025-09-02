@@ -1,10 +1,24 @@
-Install this Python package by running: 
+````markdown
+# o1Neuro Installation and Example
 
-bash cd ./o1Neuro
+## 1. Install the package
 
-bash pip install -e .
+Navigate to the o1Neuro folder and install the package in editable mode:
 
-restart the python editor if needed.
+```bash
+cd YOURPATH/o1Neuro-main/o1Neuro
+pip install -e .
+````
 
-Run the Example.py:
-python3 /YOURPATH/o1Neuro/scripts/Example.py
+>  Restart your Python editor or IDE if needed to recognize the newly installed package.
+
+## 2. Run the example
+
+Execute the provided example script:
+
+```bash
+python3 YOURPATH/o1Neuro/scripts/Example.py
+```
+
+```
+```
