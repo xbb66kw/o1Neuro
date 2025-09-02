@@ -1,5 +1,5 @@
 # o1Neuro
-Prediction model for tabular data
+A boosted neural network model for tabular data regression
 
 
 
