@@ -21,7 +21,7 @@ A boosted neural network model for tabular data regression
 
 ```conda install -c pytorch -c nvidia -c conda-forge pytorch torchvision torchaudio pytorch-cuda=11.8 xgboost==1.5.0 numpy scikit-learn hyperopt scipy numba```
 
-6. Tabnet has to be installed by pip:
+6. TabNet has to be installed by pip:
 
 ```pip install pytorch-tabnet```
 
