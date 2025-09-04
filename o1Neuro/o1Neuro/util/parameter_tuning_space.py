@@ -186,8 +186,8 @@ def objective_xgb_regression(space):
 
 space_tabnet = {
     # Lower dimensions for faster training, still expressive enough
-    "n_d": hp.choice("n_d", [8, 16, 24, 32]),
-    "n_a": hp.choice("n_a", [8, 16, 24, 32]),
+    "n_d": hp.choice("n_d", [8, 16, 24]),
+    "n_a": hp.choice("n_a", [8, 16, 24]),
     
     # Fewer steps → less computation, still captures interactions
     "n_steps": hp.choice("n_steps", [3, 4, 5]),
@@ -202,7 +202,7 @@ space_tabnet = {
     "lr": hp.loguniform("lr", np.log(1e-3), np.log(0.02)),
     
     # Use larger batch sizes for GPU/MPS acceleration
-    "batch_size": hp.choice("batch_size", [64, 128, 256, 512, 1024]),
+    "batch_size": hp.choice("batch_size", [64, 128, 256, 512]),
     
     # Virtual batch size must be much smaller than batch size for efficiency
     "virtual_batch_size": hp.choice("virtual_batch_size", [64, 128]),
