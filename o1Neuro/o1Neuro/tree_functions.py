@@ -190,14 +190,14 @@ def tabnet_train(X_train_in,
     print(f'{best_param}')
     
     
-    batch_size = [64, 128, 256, 512, 1024]
+    batch_size = [64, 128, 256, 512]
     best_param['batch_size'] = batch_size[best_param['batch_size']]
     
     virtual_batch_size = [64, 128]
     best_param['virtual_batch_size'] = virtual_batch_size[best_param['virtual_batch_size']]
     
-    n_d = [8, 16, 24, 32]
-    n_a = [8, 16, 24, 32]
+    n_d = [8, 16, 24]
+    n_a = [8, 16, 24]
     n_steps = [3, 4, 5]
     
     
